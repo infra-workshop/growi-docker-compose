@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: ./Dockerfile
     ports:
-      - 127.0.0.1:3000:3000    # localhost only by default
+      - 3000:3000    # localhost only by default
     links:
       - mongo:mongo
       - elasticsearch:elasticsearch
@@ -20,7 +20,11 @@ services:
       # - FILE_UPLOAD=local    # activate this line if you use local storage of server rather than AWS
       # - MATHJAX=1            # activate this line if you want to use MathJax
       # - PLANTUML_URI=http:// # activate this line and specify if you use your own PlantUML server rather than public plantuml.com
-    command: "dockerize
+      - HACKMD_URI=http://hackmd.infra-workshop.tech    # activate this line and specify HackMD server URI which can be accessed from GROWI client browsers
+      - HACKMD_URI_FOR_SERVER=http://hackmd:3000  # activate this line and specify HackMD server URI which can be accessed from this server container
+      - can be accessed from this server container
+   
+   command: "dockerize
               -wait tcp://mongo:27017
               -wait tcp://elasticsearch:9200
               -timeout 60s
