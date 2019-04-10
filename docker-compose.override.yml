@@ -16,6 +16,7 @@ services:
       - 3100:3000   # localhost only by default
     depends_on:
       - mariadb
+    restart: unless-stopped
 
   ##
   # MariaDB
@@ -30,6 +31,7 @@ services:
       - MYSQL_RANDOM_ROOT_PASSWORD=true
     volumes:
       - mariadb_data:/var/lib/mysql
+    restart: unless-stopped
 
 volumes:
   mariadb_data:
