@@ -16,7 +16,6 @@ services:
     environment:
       - MONGO_URI=mongodb://mongo:27017/crowi
       - ELASTICSEARCH_URI=http://elasticsearch:9200/growi
-      # - MONGO_URI=mongodb://crowi:infraaaa@mongo:27017/crowi
       - FILE_UPLOAD=local     # activate this line if you use local storage of server rather than AWS
       # - MATHJAX=1             # activate this line if you want to use MathJax
       # - PLANTUML_URI=http://  # activate this line and specify if you use your own PlantUML server rather than public plantuml.com
