@@ -35,7 +35,7 @@ services:
     build:
       context: ./hackmd
     environment:
-      - GROWI_URI=http://localhost:3000
+      - GROWI_URI=https://wiki.infra-workshop.tech
       # define 'storage' option value
       # see https://github.com/sequelize/cli/blob/7160d0/src/helpers/config-helper.js#L192
       - HMD_DB_URL=sqlite://dummyhost/hackmd/sqlite/codimd.db
